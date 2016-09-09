@@ -32,9 +32,9 @@ namespace _03_Simon_Says
             return RetString;
         }
 
-        public static string StartOfWord(string RetString, int RetInt)
+        public static string StartOfWord(string OrigString, int OrigInt)
         {
-            throw new NotImplementedException();
+            return OrigString.Substring(0, OrigInt);
         }
 
         public static string FirstWord(string OrigString)
