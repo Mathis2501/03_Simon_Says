@@ -44,7 +44,15 @@ namespace _03_Simon_Says
 
         public static string Titleize(string OrigString)
         {
-            throw new NotImplementedException();
+            char[] a = OrigString.ToLower().ToCharArray();
+
+            for (int i = 0; i < a.Count(); i++)
+            {
+                a[i] = i == 0 || a[i - 1] == ' ' ? char.ToUpper(a[i]) : a[i];
+
+            }
+
+            return new string(a);
         }
     }
 }
