@@ -39,7 +39,7 @@ namespace _03_Simon_Says
 
         public static string FirstWord(string OrigString)
         {
-            throw new NotImplementedException();
+            return OrigString.Substring(0, OrigString.IndexOf(" "));
         }
 
         public static string Titleize(string OrigString)
