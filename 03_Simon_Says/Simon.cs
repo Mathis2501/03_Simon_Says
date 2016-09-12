@@ -44,15 +44,34 @@ namespace _03_Simon_Says
 
         public static string Titleize(string OrigString)
         {
+            string[] n = OrigString.Split(' ');
+            string NewString = "";
             char[] a = OrigString.ToLower().ToCharArray();
+            bool first = true;
 
-            for (int i = 0; i < a.Count(); i++)
+
+
+            foreach (string element in n)
             {
-                a[i] = i == 0 || a[i - 1] == ' ' ? char.ToUpper(a[i]) : a[i];
+                if (!first)
+                    NewString += " ";
 
+                if (first || (element != "and" && element != "over" && element != "the"))
+                {
+                    NewString += char.ToUpper(element[0]) + element.Substring(1);
+                }
+
+
+                else
+                    NewString += element;
+
+                if (first)
+                {
+                    first = false;
+                }
+                
             }
-
-            return new string(a);
+            return NewString;
         }
     }
 }
